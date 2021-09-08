@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiCoreContatos</name>
+    </assembly>
+    <members>
+        <member name="T:ApiCoreContatos.Controllers.ContatoCoreController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.ContatoCoreController.#ctor(ApiCoreContatos.Models.ContatoContext)">
+            <summary>
+            
+            </summary>
+            <param name="contexto"></param>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.ContatoCoreController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.ContatoCoreController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.ContatoCoreController.GetEnderecos(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.ContatoCoreController.Post(ApiCoreContatos.Poco.ContatoCorePoco)">
+            <summary>
+            
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.ContatoCoreController.Put(ApiCoreContatos.Poco.ContatoCorePoco)">
+            <summary>
+            
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.ContatoCoreController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiCoreContatos.Controllers.EnderecoCoreController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.EnderecoCoreController.#ctor(ApiCoreContatos.Models.ContatoContext)">
+            <summary>
+            
+            </summary>
+            <param name="contexto"></param>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.EnderecoCoreController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.EnderecoCoreController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.EnderecoCoreController.Post(ApiCoreContatos.Poco.EnderecoCorePoco)">
+            <summary>
+            
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.EnderecoCoreController.Put(ApiCoreContatos.Poco.EnderecoCorePoco)">
+            <summary>
+            
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Controllers.EnderecoCoreController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiCoreContatos.Poco.ContatoCorePoco">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.ContatoCorePoco.ContatoId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.ContatoCorePoco.Nome">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.ContatoCorePoco.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.ContatoCorePoco.Telefone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ApiCoreContatos.Poco.EnderecoCorePoco">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.EnderecoCorePoco.EnderecoId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.EnderecoCorePoco.ContatoId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.EnderecoCorePoco.Local">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.EnderecoCorePoco.Cidade">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiCoreContatos.Poco.EnderecoCorePoco.SiglaUf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ApiCoreContatos.Services.AncestralServices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ApiCoreContatos.Services.AncestralServices.contexto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ApiCoreContatos.Services.AncestralServices.mapa">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiCoreContatos.Services.AncestralServices.#ctor(ApiCoreContatos.Models.ContatoContext)">
+            <summary>
+            
+            </summary>
+            <param name="contexto"></param>
+        </member>
+        <member name="T:ApiCoreContatos.Services.ContatoCoreServices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiCoreContatos.Services.ContatoCoreServices.#ctor(ApiCoreContatos.Models.ContatoContext)">
+            <summary>
+            
+            </summary>
+            <param name="contexto"></param>
+        </member>
+        <member name="M:ApiCoreContatos.Services.ContatoCoreServices.Browse">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Services.ContatoCoreServices.Read(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Services.ContatoCoreServices.Edit(ApiCoreContatos.Poco.ContatoCorePoco)">
+            <summary>
+            
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Services.ContatoCoreServices.Add(ApiCoreContatos.Poco.ContatoCorePoco)">
+            <summary>
+            
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Services.ContatoCoreServices.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiCoreContatos.Services.EnderecoCoreServices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiCoreContatos.Services.EnderecoCoreServices.#ctor(ApiCoreContatos.Models.ContatoContext)">
+            <summary>
+            
+            </summary>
+            <param name="contexto"></param>
+        </member>
+        <member name="M:ApiCoreContatos.Services.EnderecoCoreServices.Browse">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Services.EnderecoCoreServices.Read(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Services.EnderecoCoreServices.Edit(ApiCoreContatos.Poco.EnderecoCorePoco)">
+            <summary>
+            
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Services.EnderecoCoreServices.Add(ApiCoreContatos.Poco.EnderecoCorePoco)">
+            <summary>
+            
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCoreContatos.Services.EnderecoCoreServices.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiCoreContatos.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiCoreContatos.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:ApiCoreContatos.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiCoreContatos.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ApiCoreContatos.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

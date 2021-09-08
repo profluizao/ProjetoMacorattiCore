@@ -3,3 +3,9 @@
 ################################################################################
 
 /MVC 5/MvcContatos/bin
+/MVC 5/MvcContatos/obj/Debug
+/MVC 5/packages
+/WebApi Core/ProjetoMacorattiCore/ApiContatos/bin/Debug/net5.0
+/WebApi Core/ProjetoMacorattiCore/ApiContatos/obj
+/WebApi Core/ProjetoMacorattiCore/ApiCoreContatos/bin/Debug/net5.0
+/WebApi Core/ProjetoMacorattiCore/ApiCoreContatos/obj
