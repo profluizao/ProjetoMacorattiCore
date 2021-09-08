@@ -14,7 +14,6 @@ namespace MvcContatos.Controllers
     {
         private string Baseurl = "https://localhost:44353/";
 
-        // GET: Contato
         public async Task<ActionResult> Index()
         {
             List<ContatoViewModel> contatos = new List<ContatoViewModel>();
@@ -33,49 +32,123 @@ namespace MvcContatos.Controllers
             }
         }
 
-        // GET: Contato/Details/5
+
+
+
+
         public ActionResult Details(int id)
         {
-            return View();
+            ContatoViewModel contato = null;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.Baseurl);
+                var responseTask = client.GetAsync("api/contato/" + id.ToString());
+                responseTask.Wait();
+                var result = responseTask.Result;
+
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<ContatoViewModel>();
+                    readTask.Wait();
+                    contato = readTask.Result;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            return View(contato);
         }
 
-        // GET: Contato/Create
+
+
+
+
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Contato/Create
+
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(ContatoViewModel contato)
         {
             try
             {
-                // TODO: Add insert logic here
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(this.Baseurl);
+                    //HTTP POST
+                    var postTask = client.PostAsJsonAsync<ContatoViewModel>("api/contato", contato);
+                    postTask.Wait();
+                    var result = postTask.Result;
 
-                return RedirectToAction("Index");
+                    if (result.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
             }
             catch
             {
-                return View();
+                ModelState.AddModelError(string.Empty, "Erro no Servidor. Contacte o Administrador.");
+                return View(contato);
             }
         }
 
-        // GET: Contato/Edit/5
+
+
+
+
         public ActionResult Edit(int id)
         {
-            return View();
+            ContatoViewModel contato = null;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.Baseurl);
+                var responseTask = client.GetAsync("api/contato/" + id.ToString());
+                responseTask.Wait();
+                var result = responseTask.Result;
+
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<ContatoViewModel>();
+                    readTask.Wait();
+                    contato = readTask.Result;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            return View(contato);
         }
 
-        // POST: Contato/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(ContatoViewModel contato)
         {
             try
             {
-                // TODO: Add update logic here
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(this.Baseurl);
+                    var putTask = client.PutAsJsonAsync<ContatoViewModel>("api/contato", contato);
+                    putTask.Wait();
+                    var result = putTask.Result;
 
-                return RedirectToAction("Index");
+                    if (result.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View(contato);
+                    }
+                }
             }
             catch
             {
@@ -83,26 +156,63 @@ namespace MvcContatos.Controllers
             }
         }
 
-        // GET: Contato/Delete/5
+
+
+
+
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: Contato/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
             try
             {
-                // TODO: Add delete logic here
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(this.Baseurl);
+                    var deleteTask = client.DeleteAsync("api/contato/" + id.ToString());
+                    deleteTask.Wait();
+                    var result = deleteTask.Result;
 
-                return RedirectToAction("Index");
+                    if (result.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
             }
             catch
             {
                 return View();
             }
         }
+
+        //[HttpDelete]
+        //public ActionResult Delete(ContatoViewModel contato)
+        //{
+        //    try
+        //    {
+        //        using (var client = new HttpClient())
+        //        {
+        //            client.BaseAddress = new Uri(this.Baseurl);
+        //            var deleteTask = client.DeleteAsync("api/contato/" + contato.ContatoId.ToString());
+        //            deleteTask.Wait();
+        //            var result = deleteTask.Result;
+
+        //            if (result.IsSuccessStatusCode)
+        //            {
+        //                return RedirectToAction("Index");
+        //            }
+        //            else
+        //            {
+        //                throw new Exception();
+        //            }
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        return View(contato);
+        //    }
+        //}
     }
 }

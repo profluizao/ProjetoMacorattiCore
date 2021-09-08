@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MvcContatos.Models.EnderecoViewModel>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background: #fff">
+            <div class="modal-header">
+                <h4 class="modal-title">Endereços do Contato</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EnderecoId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ContatoId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Local)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cidade)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SiglaUf)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnderecoId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ContatoId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Local)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cidade)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SiglaUf)
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

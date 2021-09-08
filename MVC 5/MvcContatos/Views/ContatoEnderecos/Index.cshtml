@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MvcContatos.Models.ContatoEnderecoViewModel>
+﻿@model IEnumerable<MvcContatos.Models.ContatoViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -41,11 +41,24 @@
             @Html.DisplayFor(modelItem => item.Telefone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @*@Html.ActionLink("Endereços", "Details", new { id=item.ContatoId }, new { target="_blank" })*@
+            <button class="btn btn-success details" data-id="@item.ContatoId">Endereços<i class="glyphicon glyphicon-file"></i></button>
         </td>
     </tr>
 }
-
 </table>
+<div id="modal" class="modal fade" tabindex="-1" role="dialog" />
+
+@section scripts{
+    <script>
+        $(function () {
+            $(".details").click(function () {
+                var id = $(this).attr("data-id");
+                //alert(id);
+                $("#modal").load("Details?id=" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+        })
+    </script>
+}

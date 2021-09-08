@@ -207,6 +207,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contato\Index.cshtml" />
     <Content Include="Views\ContatoEnderecos\Index.cshtml" />
+    <Content Include="Views\Contato\Create.cshtml" />
+    <Content Include="Views\Contato\Edit.cshtml" />
+    <Content Include="Views\Contato\Details.cshtml" />
+    <Content Include="Views\Contato\Delete.cshtml" />
+    <Content Include="Views\ContatoEnderecos\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
